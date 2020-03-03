@@ -3,6 +3,8 @@
 ;;  :author:                Luis Montoya
 
 ; Pull requests are welcome!
+; To install AHK (takes less than 15 seconds)
+; https://www.autohotkey.com/
 ; To auto start on Windows 10:
 ; 1. https://www.maketecheasier.com/schedule-autohotkey-startup-windows/
 
@@ -25,6 +27,11 @@ LAlt & g::
         Run, http://www.google.com/search?q=%clipboard% ; Google whatever is on clipboard
     }
 
+    return
+
+; ToDo Focus
+LAlt & t::
+    Run, C:\WinStoreAppLinks\ToDo.lnk
     return
 
 
