@@ -26,7 +26,38 @@ LAlt & g::
     }else{
         Run, http://www.google.com/search?q=%clipboard% ; Google whatever is on clipboard
     }
+    return
 
+; Sci Hub that for me
+LAlt & s::
+    clipboard =      ; Empty clipboard
+    Send ^c          ; Copy whatever is selected
+    ClipWait, 0
+    if ErrorLevel{      ; If empty just open Google                  
+        ; Do nothing
+        return
+    }else{
+        Send ^n        ; Open new explorer window    
+        Run, https://sci-hub.tw/%clipboard% ; Open Sci Hub
+        return
+    }
+    return
+
+; YouTube that for me
+LAlt & y::
+    clipboard =      ; Empty clipboard
+    Send ^c          ; Copy whatever is selected
+    ClipWait, 0
+    if ErrorLevel{      ; If empty just open Google                  
+        ; Do nothing
+        return
+    }else{
+        TestString := clipboard
+        ; Replace all spaces with pluses:
+        StringReplace, tmp, TestString, %A_Space%, +, All
+        Run, https://www.youtube.com/results?search_query=%tmp%
+        return
+    }
     return
 
 ; ToDo Focus
