@@ -1,6 +1,7 @@
 ;;  A collection of useful keyboard shortcuts that use on a daily basis.
 ;;  :org:                   ITESM QRO
 ;;  :author:                Luis Montoya
+;;  :mail:                  a01208334@itesm.mx
 
 ; Pull requests are welcome!
 ; To install AHK (takes less than 15 seconds)
@@ -37,7 +38,6 @@ LAlt & s::
         ; Do nothing
         return
     }else{
-        Send ^n        ; Open new explorer window    
         Run, https://sci-hub.tw/%clipboard% ; Open Sci Hub
         return
     }
@@ -61,6 +61,7 @@ LAlt & y::
     return
 
 ; ToDo Focus
+; Requires link creation: https://stackoverflow.com/questions/35125286/how-to-start-windows-store-apps-in-autohotkey
 LAlt & t::
     Run, C:\WinStoreAppLinks\ToDo.lnk
     return
